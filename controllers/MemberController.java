@@ -22,9 +22,11 @@ public class MemberController {
 				return;
 				
 			case "1":
-				String spec = JOptionPane.showInputDialog("이름,아이디,비밀번호,주민번호,혈액형,키,몸무게");
+				String spec = JOptionPane.showInputDialog("이름,아이디,비밀번호,주민번호,혈액형,키,몸무게"); //,비밀번호,주민번호,혈액형,키,몸무게
 				System.out.println("*****"+spec);
-				String[] arr = spec.split(",");
+				String[] arr = spec.split(","); 
+				// "이름,아이디,비밀번호,주민번호,혈액형,키,몸무게" 이거보고 쓸때  홍길동,a,b,1234,a,153,30 이렇게 쓸텐데
+				// , 를 기준으로 모두 배열로 바꿔줌. 그래서 이거 쓸때 아래에서 키 몸무게는 숫자로 변환해야함.
 				member = new MemberBean();
 				member.setName(arr[0]);
 				member.setId(arr[1]);
