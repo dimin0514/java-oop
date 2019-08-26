@@ -1,10 +1,11 @@
 package com.bitcamp.controllers;
 import javax.swing.JOptionPane;
+import com.bitcamp.serviceimpls.MemberServiceImpl;
 import com.bitcamp.domains.MemberBean;
 import com.bitcamp.services.MemberService;
 public class MemberController {
 	public static void main(String[] args) {
-		MemberService service = new MemberService();
+		MemberService service = new MemberServiceImpl();
 		MemberBean member = null;
 		String[] arr = null;
 		String temp = "";
@@ -71,18 +72,8 @@ public class MemberController {
 				
 				break;
 				
-			case "5":
-				JOptionPane.showInputDialog(null, service.list());
-				
-				break;
+			
 			case "6":
-				String searchId = JOptionPane.showInputDialog("검색 ID");
-				//리턴값이 memberbean이라
-				member = service.findById(searchId);
-				JOptionPane.showMessageDialog(null, member);
-				
-				break;
-			case "7":
 				String loginValue = JOptionPane.showInputDialog("로그인 ID,pw");
 				String[] loginValues = loginValue.split(",");
 				String loginId = loginValues[0];
